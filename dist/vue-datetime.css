@@ -261,6 +261,10 @@
 
 
 
+
+
+
+
 .vdatetime-fade-enter-active,
 .vdatetime-fade-leave-active {
   transition: opacity .4s;
@@ -281,6 +285,14 @@
   background: rgba(0, 0, 0, .5);
   transition: opacity .5s;
 }
+
+
+
+
+
+
+
+
 
 
 
