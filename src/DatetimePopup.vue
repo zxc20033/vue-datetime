@@ -188,6 +188,8 @@ export default {
     onChangeYear (year) {
       this.newDatetime = this.newDatetime.set({ year })
 
+      this.$emit('change', this.newDatetime)
+
       if (this.auto) {
         this.nextStep()
       }
@@ -195,12 +197,16 @@ export default {
     onChangeMonth (month) {
       this.newDatetime = this.newDatetime.set({ month })
 
+      this.$emit('change', this.newDatetime)
+
       if (this.auto) {
         this.nextStep()
       }
     },
     onChangeDate (year, month, day) {
       this.newDatetime = this.newDatetime.set({ year, month, day })
+
+      this.$emit('change', this.newDatetime)
 
       if (this.auto) {
         this.nextStep()
@@ -225,6 +231,8 @@ export default {
         this.timePartsTouched['suffix'] ||
         !this.use12Hour
       )
+
+      this.$emit('change', this.newDatetime)
 
       if (goNext) {
         this.nextStep()

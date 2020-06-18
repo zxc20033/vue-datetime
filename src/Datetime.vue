@@ -27,6 +27,7 @@
           :allowed-date-time-ranges="allowedDateTimeRangesFormatted"
           @confirm="confirm"
           @cancel="cancel"
+          @change="change"
           :auto="auto"
           :week-start="weekStart"
           :flow="flow"
@@ -225,6 +226,9 @@ export default {
       this.datetime = datetime.toUTC()
       this.emitInput()
       this.close()
+    },
+    change(datetime) {
+      this.$emit('change', datetime ? datetime.toISO() : '')
     },
     cancel () {
       this.close()
